@@ -11,9 +11,16 @@ boolean : whether or not there exist two elements in the_array whose sum is exac
 """
 def check_for_sum(the_array, the_sum_value):
     
-    ##### ------ YOUR CODE ------ #####
-    return False
+    dic, count = {}, 0
 
+    for i in the_array:
+        if the_sum_value - i in dic:
+            return True
+        else:
+            dic[i] = count
+            count += 1
+
+    return False
 
 """
 MAIN
